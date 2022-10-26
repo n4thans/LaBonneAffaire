@@ -4,20 +4,22 @@
 {% block title %}Accueil - La bonne affaire{% endblock %}
 
 {% block body %}
-<form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="Chercher une annonce" aria-label="Search">
+<form class="d-flex" role="search" my-2>
+    <input class="form-control me-2" class="col-xs-4" type="search" placeholder="Chercher une annonce" aria-label="Search">
     <button class="btn btn-outline-success" type="submit"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
         fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
       </svg>
     </button>
   </form>
+  
+
 
   <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-4">
+    <div class="row" mx-2>
+      <div class="col-lg-4" >
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-battery-charging" viewBox="0 0 16 16">
             <path d="M9.585 2.568a.5.5 0 0 1 .226.58L8.677 6.832h1.99a.5.5 0 0 1 .364.843l-5.334 5.667a.5.5 0 0 1-.842-.49L5.99 9.167H4a.5.5 0 0 1-.364-.843l5.333-5.667a.5.5 0 0 1 .616-.09z"/>
             <path d="M2 4h4.332l-.94 1H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2.38l-.308 1H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
@@ -46,6 +48,23 @@
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
+    {% include 'partials/_annonce.html.twig' %}
+
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
     
 {% endblock %}
