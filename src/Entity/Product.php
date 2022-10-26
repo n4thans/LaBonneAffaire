@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ProductsRepository;
+use App\Repository\ProductRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ProductsRepository::class)]
-class Products
+#[ORM\Entity(repositoryClass: ProductRepository::class)]
+class Product
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -31,7 +31,7 @@ class Products
     private ?float $Price = null;
 
     #[ORM\ManyToOne(inversedBy: 'ProductID')]
-    private ?Users $Seller = null;
+    private ?User $Seller = null;
 
     public function getId(): ?int
     {

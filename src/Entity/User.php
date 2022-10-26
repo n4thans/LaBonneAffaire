@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\UsersRepository;
+use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: UsersRepository::class)]
-class Users
+#[ORM\Entity(repositoryClass: UserRepository::class)]
+class User
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -39,7 +39,7 @@ class Users
     #[ORM\Column(nullable: true)]
     private ?int $Phonenumber = null;
 
-    #[ORM\OneToMany(mappedBy: 'Seller', targetEntity: Products::class)]
+    #[ORM\OneToMany(mappedBy: 'Seller', targetEntity: Product::class)]
     private Collection $ProductID;
 
     public function __construct()
@@ -149,14 +149,14 @@ class Users
     }
 
     /**
-     * @return Collection<int, Products>
+     * @return Collection<int, Product>
      */
     public function getProductID(): Collection
     {
         return $this->ProductID;
     }
 
-    public function addProductID(Products $productID): self
+    public function addProductID(Product $productID): self
     {
         if (!$this->ProductID->contains($productID)) {
             $this->ProductID->add($productID);
@@ -166,7 +166,7 @@ class Users
         return $this;
     }
 
-    public function removeProductID(Products $productID): self
+    public function removeProductID(Product $productID): self
     {
         if ($this->ProductID->removeElement($productID)) {
             // set the owning side to null (unless already changed)
